@@ -28,8 +28,11 @@ export function Login(){
         .then(() =>{
             navigate('/admin', {replace: true});  // replace true faz com que a nagação substitua a pagina atual no historico
         })
-        .catch(() =>{
+        .catch((error) =>{
             alert('ERRO: USUARIO OU SENHA INVALIDA'); 
+             console.log(error.code);
+            console.log(error.message);
+             alert(error.message);
         })
 
     }
